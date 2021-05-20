@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterCamera : MonoBehaviour
 {
-    public float mouseSens = 100f;
+    public float mouseSens = 50f;
     public Transform Player;
     float xRotation = 0f;
     // Start is called before the first frame update
@@ -15,8 +15,8 @@ public class CharacterCamera : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float mouseX = Input.GetAxis("Mouse X")*mouseSens*Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X")*mouseSens*Time.smoothDeltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.smoothDeltaTime;
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);//Clamping
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);

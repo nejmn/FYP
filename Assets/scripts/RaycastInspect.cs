@@ -16,7 +16,7 @@ public class RaycastInspect : MonoBehaviour
 
     public bool DoOnce { get => doOnce; set => doOnce = value; }
 
-    private void Update()
+      void Update()
     {
        
         RaycastHit hit;

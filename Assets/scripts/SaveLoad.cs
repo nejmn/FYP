@@ -27,6 +27,6 @@ public class SaveLoad : MonoBehaviour
         z=PlayerPrefs.GetFloat("z");
 
         Vector3 LoadPosition = new Vector3(x, y, z);
-        Player.transform.position = LoadPosition;
+       Player.transform.position = LoadPosition;
     }
 }

@@ -5,33 +5,37 @@ using UnityEngine.SceneManagement;
 
 public class OntriggerDestroy : MonoBehaviour
 {
-    
+
     public GameObject platform;
     public GameObject DeadScreen;
     public GameObject WinScreen;
     private void Start()
     {
-            DeadScreen.SetActive(false);
+        DeadScreen.SetActive(false);
         WinScreen.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Ball"))
+        if (collision.gameObject.CompareTag("Ball"))
         {
-            if(gameObject.CompareTag("Key"))
+            if (gameObject.CompareTag("Key"))
             {
-            Destroy(platform);
-            GameVariables.KeyCount++;
+
+                GameVariables.KeyCount++;
                 WinScreen.SetActive(true);
-              //play animatiom
-                SceneManager.LoadScene(1);
-            
+               // StartCoroutine(WinTrigger());
+                //  SceneManager.LoadScene(1);
+                if(Input.GetKeyDown(KeyCode.Space))
+                {
+                    SceneManager.LoadScene(1);
+                }
+
             }
-            if(gameObject.name == "DeadTrigger")
+            if (gameObject.name == "DeadTrigger")
             {
-              
-                Destroy(platform);
+
+
                 DeadScreen.SetActive(true);
                 StartCoroutine(DeadTrigger());
             }
@@ -44,12 +48,12 @@ public class OntriggerDestroy : MonoBehaviour
     }
     IEnumerator DeadTrigger()
     {
-        
+
         DeadScreen.SetActive(true);
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
-   
 
+   
 }

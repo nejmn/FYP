@@ -18,7 +18,7 @@ public class ObjectController : MonoBehaviour
     {
         inspectController.ShowName(objectName);
     }
-
+  
     public void HideObjectName()
     {
         inspectController.HideName();
@@ -26,6 +26,12 @@ public class ObjectController : MonoBehaviour
     public void ShowExtraInfo()
     {
         inspectController.ShowAdditionalInfo(extraInfo);
+   
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
     }
    public void Interaction()
     {
@@ -164,9 +170,29 @@ public class ObjectController : MonoBehaviour
             {
                 ObjectInteraction.OnInteract34();
             }
+            if (ObjectNumber == 35)
+            {
+                ObjectInteraction.OnInteract35();
+            }
             if (ObjectNumber == 39)
             {
                 ObjectInteraction.OnInteract39();
+            }
+            if (ObjectNumber == 40)
+            {
+                ObjectInteraction.OnInteract40();
+            }
+            if (ObjectNumber == 41)
+            {
+                ObjectInteraction.OnInteract41();
+            }
+            if (ObjectNumber == 42)
+            {
+                ObjectInteraction.OnInteract42();
+            }
+            if (ObjectNumber == 43)
+            {
+                ObjectInteraction.OnInteract43();
             }
         }
         

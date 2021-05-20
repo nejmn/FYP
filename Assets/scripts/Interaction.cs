@@ -37,8 +37,18 @@ public class Interaction : MonoBehaviour
     [SerializeField] private Animator drawerAnim30;
     [SerializeField] private Animator Anim31;
     [SerializeField] private Animator Anim32;
+    [SerializeField] private Animator Anim39;
+    [SerializeField] private Animator Anim40;
+    [SerializeField] private Animator Anim41;
+    [SerializeField] private Animator Anim42;
+    [SerializeField] private Animator Anim43;
     [SerializeField] private GameObject Key;
-    private bool isOpen1 = false;
+    public AudioSource Keydoor;
+    public AudioSource Door;
+    public AudioSource Drawer;
+    public AudioSource phone;
+
+    private bool isOpen1 = true;
     private bool isOpen2 = false;
     private bool isOpen3 = false;
     private bool isOpen4 = false;
@@ -68,6 +78,10 @@ public class Interaction : MonoBehaviour
     private bool isOpen28 = false;
     private bool isOpen29 = false;
     private bool isOpen30 = false;
+    private bool isOpen40 = false;
+    private bool isOpen41 = false;
+    private bool isOpen42 = false;
+    private bool isOpen43 = false;
 
     public AudioSource Scream;
     public GameObject Player;
@@ -87,7 +101,7 @@ public class Interaction : MonoBehaviour
 
     IEnumerator EndJumpScare()
     {
-        yield return new WaitForSeconds(2.05f);
+        yield return new WaitForSeconds(1.8f);
         JumpScareCamera.SetActive(false);
         Player.SetActive(true);
         FlashImg.SetActive(false);
@@ -99,11 +113,14 @@ public class Interaction : MonoBehaviour
         if (isOpen1 == false)
         {
             drawerAnim1.Play("opendrawer1");
+            Drawer.Play();
             isOpen1 = true;
 
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim1.Play("closedrawer1");
             isOpen1 = false;
         }
@@ -113,6 +130,8 @@ public class Interaction : MonoBehaviour
 
         if (isOpen2 == false)
         {
+            Drawer.Play();
+
             drawerAnim2.Play("opendrawer2");
             isOpen2 = true;
             JumpScare();
@@ -120,6 +139,8 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim2.Play("closedrawer2");
             isOpen2 = false;
         }
@@ -129,12 +150,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen3 == false)
         {
+            Drawer.Play();
+
             drawerAnim3.Play("opendrawer3");
             isOpen3 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim3.Play("closedrawer3");
             isOpen3 = false;
         }
@@ -144,12 +169,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen4 == false)
         {
+            Drawer.Play();
+
             drawerAnim4.Play("opendrawer4");
             isOpen4 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim4.Play("closedrawer4");
             isOpen4 = false;
         }
@@ -159,12 +188,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen5 == false)
         {
+            Drawer.Play();
+
             drawerAnim5.Play("opendrawer5");
             isOpen5 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim5.Play("closedrawer5");
             isOpen1 = false;
         }
@@ -174,12 +207,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen6 == false)
         {
+            Drawer.Play();
+
             drawerAnim6.Play("opendrawer6");
             isOpen6 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim6.Play("closedrawer6");
             isOpen6 = false;
         }
@@ -189,12 +226,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen7 == false)
         {
+            Drawer.Play();
+
             drawerAnim7.Play("opendrawer7");
             isOpen7 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim7.Play("closedrawer7");
             isOpen7 = false;
         }
@@ -204,12 +245,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen8 == false)
         {
+            Drawer.Play();
+
             drawerAnim8.Play("opendrawer8");
             isOpen8 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim8.Play("closedrawer8");
             isOpen8 = false;
         }
@@ -219,12 +264,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen9 == false)
         {
+            Drawer.Play();
             drawerAnim9.Play("opendrawer9");
             isOpen9 = true;
+            Drawer.Play();
 
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim9.Play("closedrawer9");
             isOpen9 = false;
         }
@@ -234,12 +283,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen10 == false)
         {
+            Drawer.Play();
+
             drawerAnim10.Play("opendrawer10");
             isOpen10 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim10.Play("closedrawer10");
             isOpen10 = false;
         }
@@ -249,12 +302,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen11 == false)
         {
+            Drawer.Play();
+
             drawerAnim11.Play("opendrawer11");
             isOpen11 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim11.Play("closedrawer11");
             isOpen11 = false;
         }
@@ -264,12 +321,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen12 == false)
         {
+            Drawer.Play();
+
             drawerAnim12.Play("opendrawer12");
             isOpen12 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim12.Play("closedrawer12");
             isOpen12 = false;
         }
@@ -279,12 +340,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen13 == false)
         {
+            Drawer.Play();
+
             drawerAnim13.Play("opendrawer13");
             isOpen13 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim13.Play("closedrawer13");
             isOpen13 = false;
         }
@@ -294,12 +359,16 @@ public class Interaction : MonoBehaviour
 
         if (isOpen14 == false)
         {
+            Drawer.Play();
+
             drawerAnim14.Play("opendrawer14");
             isOpen14 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
+
             drawerAnim14.Play("closedrawer14");
             isOpen14 = false;
         }
@@ -310,12 +379,15 @@ public class Interaction : MonoBehaviour
 
         if (isOpen15 == false)
         {
+            Drawer.Play();
+
             drawerAnim15.Play("opendrawer15");
             isOpen15 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
             drawerAnim15.Play("closedrawer15");
             isOpen15 = false;
         }
@@ -325,12 +397,14 @@ public class Interaction : MonoBehaviour
 
         if (isOpen16 == false)
         {
+            Drawer.Play();
             drawerAnim16.Play("opendrawer16");
             isOpen16 = true;
 
         }
         else
         {
+            Drawer.Play();
             drawerAnim16.Play("closedrawer16");
             isOpen16 = false;
         }
@@ -340,12 +414,14 @@ public class Interaction : MonoBehaviour
 
         if (isOpen17 == false)
         {
+            Drawer.Play();
             drawerAnim17.Play("opendrawer17");
             isOpen17 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
             drawerAnim17.Play("closedrawer17");
             isOpen17 = false;
         }
@@ -355,12 +431,14 @@ public class Interaction : MonoBehaviour
 
         if (isOpen18 == false)
         {
+            Drawer.Play();
             drawerAnim18.Play("openrdrawer18");
             isOpen18 = true;
             JumpScare();
         }
         else
         {
+            Drawer.Play();
             drawerAnim18.Play("closedrawer18");
             isOpen18 = false;
         }
@@ -376,6 +454,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim19.Play("closedrawer19");
             isOpen19 = false;
         }
@@ -391,6 +470,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim20.Play("closedrawer20");
             isOpen20 = false;
         }
@@ -406,6 +486,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim21.Play("closedrawer21");
             isOpen21 = false;
         }
@@ -421,6 +502,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim22.Play("closedrawer22");
             isOpen22 = false;
         }
@@ -436,6 +518,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim23.Play("closedrawer23");
             isOpen23 = false;
         }
@@ -445,12 +528,14 @@ public class Interaction : MonoBehaviour
 
         if (isOpen24 == false)
         {
+            Drawer.Play();
             drawerAnim24.Play("opendrawer24");
             isOpen24 = true;
 
         }
         else
         {
+            Drawer.Play();
             drawerAnim24.Play("closedrawer24");
             isOpen24 = false;
         }
@@ -466,6 +551,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim25.Play("closedrawer25");
             isOpen25 = false;
         }
@@ -481,6 +567,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim26.Play("closedrawer26");
             isOpen26 = false;
         }
@@ -496,6 +583,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim27.Play("closedrawer27");
             isOpen27 = false;
         }
@@ -511,6 +599,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim28.Play("closedrawer28");
             isOpen28 = false;
         }
@@ -520,6 +609,7 @@ public class Interaction : MonoBehaviour
 
         if (isOpen29 == false)
         {
+            Drawer.Play();
             drawerAnim29.Play("opendrawer29");
             Anim31.Play("foundkey");
             isOpen29 = true;
@@ -528,6 +618,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim29.Play("closedrawer29");
             isOpen29 = false;
         }
@@ -543,6 +634,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            Drawer.Play();
             drawerAnim30.Play("closedrawer30");
             isOpen30 = false;
         }
@@ -558,17 +650,104 @@ public class Interaction : MonoBehaviour
         if (GameVariables.KeyCount > 0)
         {
             Anim32.Play("doorunlocked");
+            Keydoor.Play();
         }
     }
     public void OnInteract34()
     {
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(3);
+    }
+    public void OnInteract35()
+    {
+        phone.Play();
     }
     public void OnInteract39()
     {
         if (GameVariables.KeyCount >= 2)
         {
-            Anim32.Play("doorunlocked");
+            Anim39.Play("Keydooropen");
+            Keydoor.Play();
         }
+    }
+    public void OnInteract40()
+    {
+
+        if (isOpen40 == false)
+        {
+            Anim40.Play("dooropen");
+           Door.Play();
+     
+            isOpen40 = true;
+           
+        }
+        else
+        {
+            Anim40.Play("doorclose");
+            Door.Play();
+            isOpen40 = false;
+        }
+      
+        
+    }
+    public void OnInteract41()
+    {
+
+        if (isOpen41 == false)
+        {
+            Anim41.Play("dooropen2");
+            Door.Play();
+
+            isOpen41 = true;
+
+        }
+        else
+        {
+            Anim41.Play("doorclose2");
+            Door.Play();
+            isOpen41 = false;
+        }
+
+
+    }
+    public void OnInteract42()
+    {
+
+        if (isOpen42 == false)
+        {
+            Anim42.Play("dooropen3");
+            Door.Play();
+
+            isOpen42 = true;
+
+        }
+        else
+        {
+            Anim42.Play("doorclose3");
+            Door.Play();
+            isOpen42 = false;
+        }
+
+
+    }
+    public void OnInteract43()
+    {
+
+        if (isOpen43 == false)
+        {
+            Anim43.Play("dooropen4");
+            Door.Play();
+
+            isOpen43 = true;
+
+        }
+        else
+        {
+            Anim43.Play("doorclose4");
+            Door.Play();
+            isOpen43 = false;
+        }
+
+
     }
 }

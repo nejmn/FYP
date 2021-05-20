@@ -13,16 +13,21 @@ public class PlayerMovement : MonoBehaviour
     public float jump = 1f;
     Vector3 velocity;
     bool isGrounded;
-    private FootstepSound playerFootsteps;
+    public AudioSource AS;
 
     private void Start()
     {
-        PlayerPrefs.SetFloat("x", 15f);
-        PlayerPrefs.SetFloat("y", 1.7f);
-        PlayerPrefs.SetFloat("z", 124f);
+        AS = GetComponent<AudioSource>();
+
+       // PlayerPrefs.SetFloat("x", 1f);
+      // PlayerPrefs.SetFloat("y", 1.7f);
+      // PlayerPrefs.SetFloat("z", 139f);
     }
-    public void Update()
+    
+   
+   void Update()
     {
+       
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if(isGrounded&&velocity.y<0)
         {
@@ -33,7 +38,9 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
         //turning the input into a direction we want to move
         Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move*speed*Time.deltaTime);//deltaTime makes it framerate independent
+
+        controller.Move(move*speed*Time.deltaTime);
+        //deltaTime makes it framerate independent
         if(Input.GetButtonDown("Jump")&&isGrounded)
         {
             velocity.y = Mathf.Sqrt(jump * -2 * gravity);
@@ -42,6 +49,15 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        
+        if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D))
+        {
+            AS.mute = false;
+
+        }
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        {
+            AS.mute = true;
+
+        }
     }
 }

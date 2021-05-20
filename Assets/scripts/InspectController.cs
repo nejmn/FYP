@@ -52,7 +52,7 @@ public class InspectController: MonoBehaviour
         extraInfoBG.SetActive(true);
         extraInfoUI.text = newinfo;
     }
-    void ClearAdditionalInfo()
+   public  void ClearAdditionalInfo()
     {
         extraInfoBG.SetActive(false);
         extraInfoUI.text = "";
